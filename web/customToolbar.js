@@ -57,12 +57,12 @@ function removeElement(elemID){
   element.parentNode.removeChild(element);
 }
 function removeGrowRules(){
-  // addCSSRule(sheet, '.hiddenSmallView *', 'display:block !important');
-  // addCSSRule(sheet, '.hiddenMediumView', 'display:block !important');
-  // addCSSRule(sheet, '.hiddenLargeView', 'display:block !important');
-  // addCSSRule(sheet, '.visibleSmallView', 'display:block !important');
-  // addCSSRule(sheet, '.visibleMediumView', 'display:block !important');
-  // addCSSRule(sheet, '.visibleLargeView', 'display:block !important');
+  addCSSRule(sheet, '.hiddenSmallView *', 'display:block !important');
+  addCSSRule(sheet, '.hiddenMediumView', 'display:block !important');
+  addCSSRule(sheet, '.hiddenLargeView', 'display:block !important');
+  addCSSRule(sheet, '.visibleSmallView', 'display:block !important');
+  addCSSRule(sheet, '.visibleMediumView', 'display:block !important');
+  addCSSRule(sheet, '.visibleLargeView', 'display:block !important');
 }
 function addCSSRule(sheet, selector, rules, index) {
   if("insertRule" in sheet) {
