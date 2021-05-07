@@ -20,7 +20,7 @@ function editToolBar(){
   
   // removeElement('zoomIn')
   // removeElement('zoomOut')
-  removeElement('scaleSelectContainer')
+  // removeElement('scaleSelectContainer')
   removeElement('presentationMode')
   removeElement('openFile')
   removeElement('print')
