@@ -11,11 +11,13 @@ function editToolBar(){
   removeGrowRules();
 
   // removeElement('sidebarToggle')
-  removeElement('viewFind')
+  // removeElement('viewFind')
+  
   // removeElement('previous')
   // removeElement('next')
   // removeElement('pageNumber')
   removeElement('numPages')
+  
   // removeElement('zoomIn')
   // removeElement('zoomOut')
   removeElement('scaleSelectContainer')
@@ -26,8 +28,10 @@ function editToolBar(){
   removeElement('viewBookmark')
   removeElement('secondaryToolbarToggle')
 
+  addElemFromSecondaryToPrimary('viewFind', 'toolbarViewerLeft')
   // addElemFromSecondaryToPrimary('zoomIn', 'toolbarViewerRight')
   // addElemFromSecondaryToPrimary('zoomOut', 'toolbarViewerRight')
+  addElemFromSecondaryToPrimary('pageNumber', 'toolbarViewerRight')
   addElemFromSecondaryToPrimary('previous', 'toolbarViewerRight')
   addElemFromSecondaryToPrimary('next', 'toolbarViewerRight')
 }
@@ -36,7 +40,7 @@ function changeIcon(elemID, iconUrl){
   let element = document.getElementById(elemID);
   let classNames = element.className;
   classNames = elemID.includes('Toggle')? 'toolbarButton#'+elemID :
- classNames.split(' ').join('.');
+  classNames.split(' ').join('.');
   classNames = elemID.includes('view')? '#'+elemID+'.toolbarButton' : '.'+classNames
   classNames+= "::before";
   addCSSRule(sheet, classNames, `content: url(${iconUrl}) !important`, 0)
@@ -53,12 +57,12 @@ function removeElement(elemID){
   element.parentNode.removeChild(element);
 }
 function removeGrowRules(){
-  addCSSRule(sheet, '.hiddenSmallView *', 'display:block !important');
-  addCSSRule(sheet, '.hiddenMediumView', 'display:block !important');
-  addCSSRule(sheet, '.hiddenLargeView', 'display:block !important');
-  addCSSRule(sheet, '.visibleSmallView', 'display:block !important');
-  addCSSRule(sheet, '.visibleMediumView', 'display:block !important');
-  addCSSRule(sheet, '.visibleLargeView', 'display:block !important');
+  // addCSSRule(sheet, '.hiddenSmallView *', 'display:block !important');
+  // addCSSRule(sheet, '.hiddenMediumView', 'display:block !important');
+  // addCSSRule(sheet, '.hiddenLargeView', 'display:block !important');
+  // addCSSRule(sheet, '.visibleSmallView', 'display:block !important');
+  // addCSSRule(sheet, '.visibleMediumView', 'display:block !important');
+  // addCSSRule(sheet, '.visibleLargeView', 'display:block !important');
 }
 function addCSSRule(sheet, selector, rules, index) {
   if("insertRule" in sheet) {
