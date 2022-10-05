@@ -5756,18 +5756,19 @@ class PDFFindBar {
         break;
 
       case _pdf_find_controller.FindState.NOT_FOUND:
-        findMsg = this.l10n.get("find_not_found", null, "Phrase not found");
+        // 修改
+        findMsg = this.l10n.get("find_not_found", null, "未找到该内容"); 
         status = "notFound";
         break;
 
-      case _pdf_find_controller.FindState.WRAPPED:
-        if (previous) {
-          findMsg = this.l10n.get("find_reached_top", null, "Reached top of document, continued from bottom");
-        } else {
-          findMsg = this.l10n.get("find_reached_bottom", null, "Reached end of document, continued from top");
-        }
-
-        break;
+      // 修改
+      // case _pdf_find_controller.FindState.WRAPPED:
+      //   if (previous) {
+      //     findMsg = this.l10n.get("find_reached_top", null, "Reached top of document, continued from bottom");
+      //   } else {
+      //     findMsg = this.l10n.get("find_reached_bottom", null, "Reached end of document, continued from top");
+      //   }
+      //   break;
     }
 
     this.findField.setAttribute("data-status", status);
@@ -5799,7 +5800,9 @@ class PDFFindBar {
         matchesCountMsg = this.l10n.get("find_match_count", {
           current,
           total
-        }, "{{current}} of {{total}} match" + (total !== 1 ? "es" : ""));
+        // 修改
+        // }, "{{current}} of {{total}} match" + (total !== 1 ? "es" : "")); 
+        }, "第{{current}} / {{total}}处"); 
       }
     }
 
@@ -8925,7 +8928,8 @@ class PDFSidebar {
   }
 
   _showUINotification() {
-    this.l10n.get("toggle_sidebar_notification2.title", null, "Toggle Sidebar (document contains outline/attachments/layers)").then(msg => {
+    // 修改
+    this.l10n.get("toggle_sidebar_notification2.title", null, "边栏").then(msg => {
       this.toggleButton.title = msg;
     });
 
