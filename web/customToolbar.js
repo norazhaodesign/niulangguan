@@ -21,19 +21,19 @@ function editToolBar(){
   // removeElement('zoomIn')
   // removeElement('zoomOut')
   // removeElement('scaleSelectContainer')
-  removeElement('presentationMode')
+  // removeElement('presentationMode')
   removeElement('openFile')
   removeElement('print')
   removeElement('download')
   removeElement('viewBookmark')
   removeElement('secondaryToolbarToggle')
 
-  addElemFromSecondaryToPrimary('viewFind', 'toolbarViewerLeft')
-  // addElemFromSecondaryToPrimary('zoomIn', 'toolbarViewerRight')
+  // addElemFromSecondaryToPrimary('viewFind', 'toolbarViewerRight')
   // addElemFromSecondaryToPrimary('zoomOut', 'toolbarViewerRight')
-  addElemFromSecondaryToPrimary('pageNumber', 'toolbarViewerRight')
-  addElemFromSecondaryToPrimary('previous', 'toolbarViewerRight')
-  addElemFromSecondaryToPrimary('next', 'toolbarViewerRight')
+  // addElemFromSecondaryToPrimary('zoomIn', 'toolbarViewerRight')
+  addElemFromSecondaryToPrimary('pageNumber', 'toolbarViewerLeft')
+  addElemFromSecondaryToPrimary('previous', 'toolbarViewerLeft')
+  addElemFromSecondaryToPrimary('next', 'toolbarViewerLeft')
 }
 
 function changeIcon(elemID, iconUrl){
